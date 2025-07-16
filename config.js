@@ -4,6 +4,7 @@ module.exports = {
     },
     "autodiscover": true,
     "gitAuthor": "bitfist <me@renelebherz.com>",
+    "automerge": true,
     "autodiscoverFilter": ["bitfist/*"],
     "extends": [
         "config:recommended",
@@ -82,7 +83,6 @@ module.exports = {
             ]
         }
     ],
-    "platformAutomerge": true,
     "assigneesFromCodeOwners": true,
     "labels": [
         "renovate",
