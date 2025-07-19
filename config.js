@@ -53,7 +53,8 @@ module.exports = {
                 "gradle"
             ],
             "matchUpdateTypes": ["minor"],
-            "semanticCommitType": "feat"
+            "semanticCommitType": "feat",
+            "commitMessagePrefix": "chore"
         },
         {
             "description": "Fix PR for patch updates",
@@ -62,7 +63,8 @@ module.exports = {
                 "gradle"
             ],
             "matchUpdateTypes": ["patch"],
-            "semanticCommitType": "fix"
+            "semanticCommitType": "fix",
+            "commitMessagePrefix": "chore"
         },
         // endregion
         // region Maven package repository registration
