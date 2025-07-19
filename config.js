@@ -43,7 +43,7 @@ module.exports = {
             ],
             "matchUpdateTypes": ["major"],
             "semanticCommitType": "feat",
-            "commitMessagePrefix": "feat!",
+            "commitMessagePrefix": "chore(deps)!",
             "commitBody": "BREAKING CHANGE: support {{packageName}} {{newVersion}}"
         },
         {
@@ -54,7 +54,7 @@ module.exports = {
             ],
             "matchUpdateTypes": ["minor"],
             "semanticCommitType": "feat",
-            "commitMessagePrefix": "chore"
+            "commitMessagePrefix": "chore(deps)"
         },
         {
             "description": "Fix PR for patch updates",
@@ -64,7 +64,7 @@ module.exports = {
             ],
             "matchUpdateTypes": ["patch"],
             "semanticCommitType": "fix",
-            "commitMessagePrefix": "chore"
+            "commitMessagePrefix": "chore(deps)"
         },
         // endregion
         // region Maven package repository registration
