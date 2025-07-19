@@ -53,7 +53,7 @@ module.exports = {
                 "gradle"
             ],
             "matchUpdateTypes": ["minor"],
-            "semanticCommitType": "feat",
+            "semanticCommitType": "fix",
             "commitMessagePrefix": "chore(deps)"
         },
         {
