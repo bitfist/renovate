@@ -76,8 +76,7 @@ module.exports = {
                 "https://maven.pkg.github.com/bitfist/gradle-github-support",
                 "https://maven.pkg.github.com/bitfist/jcef-gradle-plugin",
                 "https://maven.pkg.github.com/bitfist/jcef-spring-boot-starter",
-                "https://maven.pkg.github.com/bitfist/markdown-editor-fx",
-                "https://maven.pkg.github.com/bitfist/os-conditions-spring-boot-starter",
+                "https://maven.pkg.github.com/bitfist/os-conditions-spring-boot-starter"
             ],
             "matchPackageNames": [
                 "/io.github.bitfist.*/"
