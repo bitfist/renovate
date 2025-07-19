@@ -8,6 +8,7 @@ module.exports = {
     "autodiscoverFilter": ["bitfist/*"],
     "extends": [
         "config:recommended",
+        ":semanticCommits"
     ],
     "packageRules": [
         {
@@ -25,12 +26,46 @@ module.exports = {
             "matchUpdateTypes": ["major", "minor", "patch"],
             "automerge": true,
         },
+        // region Changelog lookup
         {
             "matchDepNames": [
                 "io.spring.dependency-management"
             ],
             "changelogUrl": "https://github.com/spring-gradle-plugins/dependency-management-plugin"
         },
+        // endregion
+        // region Semantic release configuration
+        {
+            "description": "Breaking PR for major updates",
+            "matchDatasources": [
+                "maven",
+                "gradle"
+            ],
+            "matchUpdateTypes": ["major"],
+            "semanticCommitType": "feat",
+            "commitMessagePrefix": "feat!",
+            "commitBody": "BREAKING CHANGE: support {{packageName}} {{newVersion}}"
+        },
+        {
+            "description": "Feature PR for minor updates",
+            "matchDatasources": [
+                "maven",
+                "gradle"
+            ],
+            "matchUpdateTypes": ["minor"],
+            "semanticCommitType": "feat"
+        },
+        {
+            "description": "Fix PR for patch updates",
+            "matchDatasources": [
+                "maven",
+                "gradle"
+            ],
+            "matchUpdateTypes": ["patch"],
+            "semanticCommitType": "fix"
+        },
+        // endregion
+        // region Maven package repository registration
         {
             "matchDatasources": [
                 "maven"
@@ -48,6 +83,8 @@ module.exports = {
                 "/io.github.bitfist.*/"
             ]
         },
+        // endregion
+        // region Dependency groupy
         {
             "groupName": "kotlin-spring",
             "matchDepNames": [
@@ -82,6 +119,7 @@ module.exports = {
                 "org.openrewrite{/,}**"
             ]
         }
+        // endregion
     ],
     "assigneesFromCodeOwners": true,
     "labels": [
