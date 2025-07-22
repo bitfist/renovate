@@ -42,7 +42,7 @@ module.exports = {
             "matchPackageNames": [
                 "org.springframework.boot:{/,}**",
                 "org.springframework.cloud:{/,}**"
-            ]
+            ],
             "matchUpdateTypes": ["major"],
             "commitMessagePrefix": "chore(deps)!:",
             "automerge": false,
