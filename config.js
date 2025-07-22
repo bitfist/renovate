@@ -49,34 +49,14 @@ module.exports = {
             "commitBody": "BREAKING CHANGE: support {{packageName}} {{newVersion}}"
         },
         {
-            "description": "chore PR for major updates",
+            "description": "Chore PR for other updates",
             "matchDatasources": [
                 "maven",
                 "gradle"
             ],
-            "matchUpdateTypes": ["major"],
+            "matchUpdateTypes": ["major", "minor", "patch"],
             "automerge": true,
             "commitMessagePrefix": "chore(deps):",
-        },
-        {
-            "description": "chore PR for minor updates",
-            "matchDatasources": [
-                "maven",
-                "gradle"
-            ],
-            "matchUpdateTypes": ["minor"],
-            "automerge": true,
-            "commitMessagePrefix": "chore(deps):"
-        },
-        {
-            "description": "chore PR for patch updates",
-            "matchDatasources": [
-                "maven",
-                "gradle"
-            ],
-            "matchUpdateTypes": ["patch"],
-            "automerge": true,
-            "commitMessagePrefix": "chore(deps):"
         },
         // endregion
         // region Maven package repository registration
