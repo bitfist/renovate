@@ -16,14 +16,6 @@ module.exports = {
             "minimumReleaseAge": "3 days",
             "prCreation": "not-pending"
         },
-        {
-            "matchDatasources": [
-                "maven",
-                "gradle"
-            ],
-            "matchUpdateTypes": ["major", "minor", "patch"],
-            "automerge": true,
-        },
         // region Changelog lookup
         {
             "matchDepNames": [
