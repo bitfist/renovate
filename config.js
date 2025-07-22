@@ -4,11 +4,9 @@ module.exports = {
     },
     "autodiscover": true,
     "gitAuthor": "bitfist <me@renelebherz.com>",
-    "automerge": true,
     "autodiscoverFilter": ["bitfist/*"],
     "extends": [
-        "config:recommended",
-        ":semanticCommits"
+        "config:recommended"
     ],
     "packageRules": [
         {
@@ -34,36 +32,50 @@ module.exports = {
             "changelogUrl": "https://github.com/spring-gradle-plugins/dependency-management-plugin"
         },
         // endregion
-        // region Semantic release configuration
+        // region Merge configuration
         {
-            "description": "Breaking PR for major updates",
+            "description": "Breaking PR for major updates of Spring",
+            "matchDatasources": [
+                "maven",
+                "gradle"
+            ],
+            "matchPackageNames": [
+                "org.springframework.boot:{/,}**",
+                "org.springframework.cloud:{/,}**"
+            ]
+            "matchUpdateTypes": ["major"],
+            "commitMessagePrefix": "chore(deps)!:",
+            "automerge": false,
+            "commitBody": "BREAKING CHANGE: support {{packageName}} {{newVersion}}"
+        },
+        {
+            "description": "chore PR for major updates",
             "matchDatasources": [
                 "maven",
                 "gradle"
             ],
             "matchUpdateTypes": ["major"],
-            "semanticCommitType": "feat",
-            "commitMessagePrefix": "chore(deps)!:",
-            "commitBody": "BREAKING CHANGE: support {{packageName}} {{newVersion}}"
+            "automerge": true,
+            "commitMessagePrefix": "chore(deps):",
         },
         {
-            "description": "Feature PR for minor updates",
+            "description": "chore PR for minor updates",
             "matchDatasources": [
                 "maven",
                 "gradle"
             ],
             "matchUpdateTypes": ["minor"],
-            "semanticCommitType": "fix",
+            "automerge": true,
             "commitMessagePrefix": "chore(deps):"
         },
         {
-            "description": "Fix PR for patch updates",
+            "description": "chore PR for patch updates",
             "matchDatasources": [
                 "maven",
                 "gradle"
             ],
             "matchUpdateTypes": ["patch"],
-            "semanticCommitType": "fix",
+            "automerge": true,
             "commitMessagePrefix": "chore(deps):"
         },
         // endregion
@@ -91,33 +103,6 @@ module.exports = {
             "matchDepNames": [
                 "org.jetbrains.kotlin.jvm",
                 "org.jetbrains.kotlin.plugin.spring"
-            ]
-        },
-        {
-            "groupName": "mapstruct",
-            "matchPackageNames": [
-                "org.mapstruct:mapstruct:{/,}**"
-            ]
-        },
-        {
-            "groupName": "SpringDoc",
-            "matchPackageNames": [
-                "org.springdoc:{/,}**"
-            ]
-        },
-        {
-            "groupName": "Apache Avro",
-            "matchPackageNames": [
-                "org.apache.avro:{/,}**"
-            ]
-        },
-        {
-            "matchDatasources": [
-                "maven"
-            ],
-            "groupName": "OpenRewrite",
-            "matchPackageNames": [
-                "org.openrewrite{/,}**"
             ]
         }
         // endregion
