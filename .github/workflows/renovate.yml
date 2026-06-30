@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v46
+        uses: renovatebot/github-action@v46.1.17
         env:
           RENOVATE_AUTODISCOVER: true
           RENOVATE_GIT_AUTHOR: "bitfist <me@renelebherz.com>"
